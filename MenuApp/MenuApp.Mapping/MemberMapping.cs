@@ -7,7 +7,7 @@ using System.Text;
 
 namespace MenuApp.Mapping
 {
-    public class UserMapping : BaseUserMapping<Member>
+    public class MemberMapping : BaseUserMapping<Member>
     {
         public override void Configure(EntityTypeBuilder<Member> builder)
         {
