@@ -13,11 +13,7 @@ using System.Threading.Tasks;
 namespace MenuApp.DataAccess.EntityFrameWork.Context
 {
     public class MenuAppDbContext : IdentityDbContext
-    {
-        public MenuAppDbContext()
-        {
-
-        }
+    {     
         private readonly IHttpContextAccessor _contextAccessor;      
         public MenuAppDbContext(DbContextOptions<MenuAppDbContext> options, IHttpContextAccessor contextAccessor) : base(options)
         {
@@ -34,10 +30,6 @@ namespace MenuApp.DataAccess.EntityFrameWork.Context
             builder.ApplyConfigurationsFromAssembly(typeof(IMapper).Assembly);
 
             base.OnModelCreating(builder);
-        }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Server=TOLUNAY\\SQLEXPRESS;Database=MenuApp; Integrated Security=True;");
         }
 
         public override int SaveChanges()

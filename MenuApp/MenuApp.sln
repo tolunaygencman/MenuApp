@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MenuApp.Mapping", "MenuApp.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MenuApp.DataAccess", "MenuApp.DataAccess\MenuApp.DataAccess.csproj", "{D58F2818-7181-42FE-8CC8-2EB9D075950B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenuApp.Business", "MenuApp.Business\MenuApp.Business.csproj", "{F3227B50-4014-4F8B-8706-439308E24471}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MenuApp.Business", "MenuApp.Business\MenuApp.Business.csproj", "{F3227B50-4014-4F8B-8706-439308E24471}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenuApp.MVC", "MenuApp.MVC\MenuApp.MVC.csproj", "{AB2360C5-0546-44D7-BB57-FCA01099E443}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{F3227B50-4014-4F8B-8706-439308E24471}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3227B50-4014-4F8B-8706-439308E24471}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3227B50-4014-4F8B-8706-439308E24471}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB2360C5-0546-44D7-BB57-FCA01099E443}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB2360C5-0546-44D7-BB57-FCA01099E443}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB2360C5-0546-44D7-BB57-FCA01099E443}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB2360C5-0546-44D7-BB57-FCA01099E443}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
