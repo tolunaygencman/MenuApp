@@ -1,15 +1,16 @@
+using AspNetCoreHero.ToastNotification.Extensions;
 using MenuApp.DataAccess.EntityFrameWork.Context;
+using MenuApp.MVC.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Globalization;
+using System.Reflection;
 
 namespace MenuApp.MVC
 {
@@ -25,13 +26,28 @@ namespace MenuApp.MVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddControllersWithViews()
+                .AddRazorRuntimeCompilation()
+                .AddMvcLocalization(LanguageViewLocationExpanderFormat.Suffix,
+                opt => opt.DataAnnotationLocalizerProvider = (type, factory) =>
+                {
+                    var assemblyName = new AssemblyName(typeof(SharedModelResource).GetTypeInfo().Assembly.FullName);
+                    return factory.Create(nameof(SharedModelResource), assemblyName.Name);
+                });
+
+
             services.AddDbContext<MenuAppDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("MenuApp"));
                 options.UseLazyLoadingProxies(true);
             });
             services.AddHttpContextAccessor();
+            services.AddIdentityServices();
+            services.AddDataAccessServices();
+            services.AddBusinessServices();
+            services.AddLocalizationServices();
+            services.AddAutoMapperServices();
+            services.AddNotyfServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,7 +68,21 @@ namespace MenuApp.MVC
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
+            var cultures = new List<CultureInfo>
+            {
+                //new CultureInfo("en"),
+                new CultureInfo("tr")
+            };
+            app.UseRequestLocalization(options =>
+            {
+                options.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("tr");
+                options.SupportedCultures = cultures;
+                options.SupportedUICultures = cultures;
+            });
+
+            app.UseNotyf();
 
             app.UseEndpoints(endpoints =>
             {
