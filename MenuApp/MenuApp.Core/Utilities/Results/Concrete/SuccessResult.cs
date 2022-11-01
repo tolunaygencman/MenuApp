@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MenuApp.Core.Utilities.Results.Concrete
 {
-    public class SuccessResult
+    public class SuccessResult : Result
     {
         public SuccessResult() : base(true)
         { }

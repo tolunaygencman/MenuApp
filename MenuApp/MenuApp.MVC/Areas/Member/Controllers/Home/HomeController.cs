@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MenuApp.MVC.Areas.Admin.Controllers
+namespace MenuApp.MVC.Areas.Member.Controllers.Home
 {
-    public class AdminController : Controller
+    [Area("Member")]
+    //[Authorize(Roles = "Member")]
+    public class HomeController : Controller
     {
         public IActionResult Index()
         {

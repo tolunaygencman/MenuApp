@@ -1,0 +1,41 @@
+﻿@model LoginVM
+@{
+    ViewData["Title"] = Localizer["Login"];
+    Layout = null;
+}
+<html>
+<head>
+    <title>@ViewData["Title"]</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/login-style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <section class="vh-100">
+        <div class="container-fluid h-custom">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-12 col-lg-12 col-xl-12 offset-xl-1">
+                    <form asp-action="Index">
+                        <div class="form-outline mb-4">
+                            <input asp-for="Email" placeholder="@Localizer["Email"]" class="form-control form-control-lg">
+                            <span class="text-danger" asp-validation-for="Email"></span>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input asp-for="Password" placeholder="@Localizer["Password"]" class="form-control form-control-lg">
+                            <span class="text-danger" asp-validation-for="Password"></span>
+                        </div>
+                        <div class="text-center text-lg-start mt-4 pt-2">
+                            <input type="submit" value="@Localizer["Login"]" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    @await Component.InvokeAsync("Notyf")
+</body>
+</html>
+
+
