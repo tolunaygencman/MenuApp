@@ -1,0 +1,27 @@
+﻿<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <div style="height:75%;">
+        <li class="nav-item ">
+            <a class="nav-link text-center" asp-area="Member" asp-controller="Menu" asp-action="Index">@SharedLocalizer["List", SharedLocalizer["Menu"]]</a>
+        </li>
+    </div>
+
+    <hr class="sidebar-divider my-0">
+
+    <div style="height:25%;">
+        <li class="nav-item ">
+            <a class="nav-link text-center"><i class="fa fa-id-card"></i> ...</a>
+        </li>
+        <hr class="sidebar-divider my-0">
+        <li class="nav-item">
+            <a class="nav-link text-center " asp-area="" asp-controller="Login" asp-action="SignOut"> @SharedLocalizer["LogOut"]</a>
+        </li>
+    </div>
+
+
+    <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+</ul>
+
