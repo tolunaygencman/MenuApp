@@ -7,27 +7,27 @@ using System.Threading.Tasks;
 
 namespace MenuApp.DataAccess.EntityFrameWork.Seeds
 {
-    public static class MemberSeed
+    public class MemberSeed
     {
         public static async Task SeedAsync(UserManager<IdentityUser> userManager, IMemberRepository memberRepository)
         {
-            var defaultUser = new IdentityUser
+            var defaultMember = new IdentityUser
             {
                 UserName = "member@menuapp.com",
                 Email = "member@menuapp.com",
                 EmailConfirmed = true
             };
-            if (userManager.Users.All(x => x.Id != defaultUser.Id))
+            if (userManager.Users.All(x => x.Id != defaultMember.Id))
             {
-                var user = await userManager.FindByEmailAsync(defaultUser.Email);
+                var user = await userManager.FindByEmailAsync(defaultMember.Email);
                 if (user == null)
                 {
-                    await userManager.CreateAsync(defaultUser, "1234");
-                    await userManager.AddToRoleAsync(defaultUser, Roles.Member.ToString());
+                    await userManager.CreateAsync(defaultMember, "1234");
+                    await userManager.AddToRoleAsync(defaultMember, Roles.Member.ToString());
                 }
                 else
                 {
-                    defaultUser = await userManager.FindByEmailAsync("admin@menuapp.com");
+                    defaultMember = await userManager.FindByEmailAsync("member@menuapp.com");
                 }
             }
 
@@ -38,8 +38,9 @@ namespace MenuApp.DataAccess.EntityFrameWork.Seeds
                 {
                     FirstName = "Menu",
                     LastName = "Owner",
-                    Email = defaultUser.Email,
-                    IdentityId = defaultUser.Id
+                    Email = defaultMember.Email,
+                    IdentityId = defaultMember.Id,
+                    RestourantName ="Acme"
                 };
                 await memberRepository.AddAsync(member);
             }

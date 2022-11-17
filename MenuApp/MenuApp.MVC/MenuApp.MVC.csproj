@@ -6,17 +6,20 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\Member\Models\" />
-    <Folder Include="Areas\Member\Views\Shared\" />
-    <Folder Include="Resources\Areas\Admin\" />
-    <Folder Include="Resources\Areas\Member\" />
+    <Folder Include="Resources\Areas\Admin\Controllers\" />
+    <Folder Include="Resources\Areas\Admin\Models\" />
+    <Folder Include="Resources\Areas\Admin\Views\" />
+    <Folder Include="Resources\Areas\Member\Controllers\" />
+    <Folder Include="Resources\Areas\Member\Models\" />
+    <Folder Include="Resources\Areas\Member\Views\" />
     <Folder Include="Resources\Views\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AspNetCoreHero.ToastNotification" Version="1.1.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.30" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.17">
       <PrivateAssets>all</PrivateAssets>

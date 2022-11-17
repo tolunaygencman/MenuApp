@@ -11,6 +11,8 @@ using Microsoft.Extensions.Hosting;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 
 namespace MenuApp.MVC
 {
@@ -35,7 +37,8 @@ namespace MenuApp.MVC
                     return factory.Create(nameof(SharedModelResource), assemblyName.Name);
                 });
 
-
+            services.AddFluentValidationAutoValidation();
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddDbContext<MenuAppDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("MenuApp"));

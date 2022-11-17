@@ -27,9 +27,9 @@ namespace MenuApp.MVC.Extensions
         }
         public static void AddBusinessServices(this IServiceCollection services)
         {
-            services.AddScoped<IAdminService, AdminManager>();
-            /*
+            services.AddScoped<IAdminService, AdminManager>();          
             services.AddScoped<IMemberService, MemberManager>();
+            /*
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<IFoodService, FoodManager>();
             services.AddScoped<IMenuService, MenuManager>();
