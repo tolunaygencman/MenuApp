@@ -117,23 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Admin" xml:space="preserve">
-    <value>Admin</value>
-  </data>
-  <data name="Choose_File" xml:space="preserve">
-    <value>Dosya Seç</value>
-  </data>
   <data name="Email" xml:space="preserve">
     <value>E-Posta</value>
   </data>
-  <data name="List" xml:space="preserve">
-    <value>{0} Listesi</value>
+  <data name="Login" xml:space="preserve">
+    <value>Giriş Yap</value>
   </data>
-  <data name="LogOut" xml:space="preserve">
-    <value>Çıkış Yap</value>
-  </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Menü</value>
+  <data name="Password" xml:space="preserve">
+    <value>Şifre</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>Kayıt Ol</value>

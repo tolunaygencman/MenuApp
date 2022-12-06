@@ -10,5 +10,6 @@ namespace MenuApp.Business.Abstracts
     public interface IMemberService
     {
         Task<IDataResult<MemberDto>> GetByIdentityId(string identityId);
+        Task<IDataResult<MemberDto>> AddAsync(MemberCreateDto entity);
     }
 }

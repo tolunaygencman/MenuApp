@@ -8,11 +8,9 @@ namespace MenuApp.MVC.Models.VMs
 { 
     public class LoginVM
     {
-        [Display(Name = "Email")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
-        [Display(Name = "Password")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
     }
