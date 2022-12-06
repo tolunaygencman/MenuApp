@@ -117,25 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Admin" xml:space="preserve">
-    <value>Admin</value>
+  <data name="Adress_Length" xml:space="preserve">
+    <value>Adres 512 karakterden uzun olamaz.</value>
   </data>
-  <data name="Choose_File" xml:space="preserve">
-    <value>Dosya Seç</value>
+  <data name="Correct_Image_File_Type" xml:space="preserve">
+    <value>Sadece jpg/jpeg/png formatındaki dosyalar yüklenebilir</value>
   </data>
-  <data name="Email" xml:space="preserve">
-    <value>E-Posta</value>
+  <data name="Empty_Email" xml:space="preserve">
+    <value>Email boş bırakılamaz</value>
   </data>
-  <data name="List" xml:space="preserve">
-    <value>{0} Listesi</value>
+  <data name="File_Size" xml:space="preserve">
+    <value>Dosya boyutu 5 MB'tan büyük olamaz.</value>
   </data>
-  <data name="LogOut" xml:space="preserve">
-    <value>Çıkış Yap</value>
+  <data name="FirstName_Minumum_Length" xml:space="preserve">
+    <value>İsim en az 2 karakterden oluşmalıdır</value>
   </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Menü</value>
+  <data name="FirstName_Not_Empty" xml:space="preserve">
+    <value>İsim boş bırakılamaz.</value>
   </data>
-  <data name="Register" xml:space="preserve">
-    <value>Kayıt Ol</value>
+  <data name="LastName_Minumum_Length" xml:space="preserve">
+    <value>Soyisim en az 2 karakterden oluşmalıdır</value>
+  </data>
+  <data name="LastName_Not_Empty" xml:space="preserve">
+    <value>Soyisim boş bırakılamaz.</value>
+  </data>
+  <data name="Restourant_Not_Empty" xml:space="preserve">
+    <value>Restoran adı boş bırakılamaz.</value>
+  </data>
+  <data name="Valid_Email" xml:space="preserve">
+    <value>Geçerli bir e-posta giriniz.</value>
+  </data>
+  <data name="Valid_FirstName" xml:space="preserve">
+    <value>İsim özel karakter ya da sayı içeremez.</value>
+  </data>
+  <data name="Valid_LastName" xml:space="preserve">
+    <value>Soyisim özel karakter ya da sayı içeremez.</value>
   </data>
 </root>

@@ -117,25 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Admin" xml:space="preserve">
-    <value>Admin</value>
+  <data name="Member_Error" xml:space="preserve">
+    <value>Üye ekleme işlemi bir sorunla karşılaştı. -</value>
   </data>
-  <data name="Choose_File" xml:space="preserve">
-    <value>Dosya Seç</value>
+  <data name="Member_Exist" xml:space="preserve">
+    <value>Bu E-maile sahip başka bir Üye var.</value>
   </data>
-  <data name="Email" xml:space="preserve">
-    <value>E-Posta</value>
-  </data>
-  <data name="List" xml:space="preserve">
-    <value>{0} Listesi</value>
-  </data>
-  <data name="LogOut" xml:space="preserve">
-    <value>Çıkış Yap</value>
-  </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Menü</value>
-  </data>
-  <data name="Register" xml:space="preserve">
-    <value>Kayıt Ol</value>
+  <data name="Member_Success" xml:space="preserve">
+    <value>Üye Ekleme işlemi başarıyla tamamlandı.</value>
   </data>
 </root>

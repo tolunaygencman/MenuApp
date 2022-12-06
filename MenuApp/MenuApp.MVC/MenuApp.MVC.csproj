@@ -13,7 +13,6 @@
     <Folder Include="Resources\Areas\Member\Controllers\" />
     <Folder Include="Resources\Areas\Member\Models\" />
     <Folder Include="Resources\Areas\Member\Views\" />
-    <Folder Include="Resources\Views\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -11,5 +11,10 @@
         //Found Messages
         public const string UserNotFound = "User_Not_Found";
         public const string FoundSuccess = "Found_Successfully";
+
+        //Member Create Messages
+        public const string MemberAddFail = "Member_Add_Fail";
+        public const string MemberAddSuccess = "Member_Add_Success";
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AspNetCoreHero.ToastNotification.Abstractions;
 using MenuApp.Business.Abstracts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 namespace MenuApp.MVC.Areas.Member.Controllers.Home
 {
     [Area("Member")]
-    //[Authorize(Roles = "Member")]
+    [Authorize(Roles = "Member")]
     public class HomeController : Controller
     {
 

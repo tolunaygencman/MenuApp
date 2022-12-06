@@ -87,8 +87,7 @@ namespace MenuApp.MVC.Extensions
 
         public static void AddAutoMapperServices(this IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(IProfile), typeof(AdminAreaProfiles));
-            services.AddAutoMapper(typeof(IProfile), typeof(MemberAreaProfiles));
+            services.AddAutoMapper(typeof(IProfile), typeof(AdminAreaProfiles), typeof(MemberAreaProfiles));  
         }
         public static void AddNotyfServices(this IServiceCollection services)
         {
