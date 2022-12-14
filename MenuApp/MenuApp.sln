@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MenuApp.DataAccess", "MenuA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MenuApp.Business", "MenuApp.Business\MenuApp.Business.csproj", "{F3227B50-4014-4F8B-8706-439308E24471}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenuApp.MVC", "MenuApp.MVC\MenuApp.MVC.csproj", "{AB2360C5-0546-44D7-BB57-FCA01099E443}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MenuApp.MVC", "MenuApp.MVC\MenuApp.MVC.csproj", "{AB2360C5-0546-44D7-BB57-FCA01099E443}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

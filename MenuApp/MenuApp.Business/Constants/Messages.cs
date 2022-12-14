@@ -16,5 +16,10 @@
         public const string MemberAddFail = "Member_Add_Fail";
         public const string MemberAddSuccess = "Member_Add_Success";
 
+        //Menu Create Messages
+        public const string MenuAddFail = "Menu_Add_Fail";
+        public const string MenuAddSuccess = "Menu_Add_Success";
+        public const string MenuDoesntExist = "Menu_Doesn't_Exist";
+
     }
 }

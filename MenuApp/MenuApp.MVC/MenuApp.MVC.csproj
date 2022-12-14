@@ -6,12 +6,9 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Member\Models\" />
     <Folder Include="Resources\Areas\Admin\Controllers\" />
     <Folder Include="Resources\Areas\Admin\Models\" />
     <Folder Include="Resources\Areas\Admin\Views\" />
-    <Folder Include="Resources\Areas\Member\Controllers\" />
-    <Folder Include="Resources\Areas\Member\Models\" />
     <Folder Include="Resources\Areas\Member\Views\" />
   </ItemGroup>
 

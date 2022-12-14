@@ -1,0 +1,54 @@
+﻿@model MenuCreateVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container p-2">
+
+    <form asp-action="Create" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group mt-2">
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control bg-white border" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mt-2">
+            <label asp-for="ButtonColor" class="control-label"></label>
+            <input type="color" asp-for="ButtonColor" class="form-control bg-white border" />
+            <span asp-validation-for="ButtonColor" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mt-2">
+            <label asp-for="TextColor" class="control-label"></label>
+            <input type="color" asp-for="TextColor" class="form-control bg-white border" />
+            <span asp-validation-for="TextColor" class="text-danger"></span>
+        </div>    
+
+        <div class="form-group mt-2">
+            <label asp-for="BackgroundImage" class="control-label"></label>
+            <div class="custom-file">
+                <input type="file" asp-for="BackgroundImage" class="custom-file-input" />
+                <label class="custom-file-label" for="customFile">@SharedLocalizer["Choose_File"]</label>
+            </div>
+            <span asp-validation-for="BackgroundImage.Length" class="text-danger"></span>
+            <span asp-validation-for="BackgroundImage.ContentType" class="text-danger"></span>
+        </div>
+      
+        <div class="form-group mt-2">
+            <button type="submit" class="btn btn-primary">@SharedLocalizer["Register"]</button>
+        </div>
+    </form>
+</div>
+@section Scripts{
+    <script type="text/javascript">
+            $("custom-file-input").on("change", function () {
+                var fileName = $(this).val().split("\\").pop();
+                $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+            });
+    </script>
+}
+
+
+

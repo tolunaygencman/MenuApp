@@ -12,8 +12,7 @@ namespace MenuApp.MVC.Models.VMs
         public string LastName { get; set; } 
         public string Email { get; set; }
         public string RestourantName { get; set; } 
-        #nullable enable
-        public string? Address { get; set; }
-        public IFormFile? Image { get; set; }
+        public string Address { get; set; }
+        public IFormFile Image { get; set; }
     }
 }

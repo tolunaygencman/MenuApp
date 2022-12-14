@@ -14,7 +14,7 @@ namespace MenuApp.MVC.Controllers
         private readonly INotyfService _notyf;
         private readonly IStringLocalizer<LoginController> _localizer;
 
-        public LoginController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, INotyfService notyf = null, IStringLocalizer<LoginController> localizer = null)
+        public LoginController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, INotyfService notyf, IStringLocalizer<LoginController> localizer)
         {
             _userManager = userManager;
             _signInManager = signInManager;

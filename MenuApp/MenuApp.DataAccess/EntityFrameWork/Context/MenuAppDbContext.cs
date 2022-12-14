@@ -14,7 +14,7 @@ namespace MenuApp.DataAccess.EntityFrameWork.Context
 {
     public class MenuAppDbContext : IdentityDbContext
     {     
-        private readonly IHttpContextAccessor _contextAccessor;      
+        private readonly IHttpContextAccessor _contextAccessor;
         public MenuAppDbContext(DbContextOptions<MenuAppDbContext> options, IHttpContextAccessor contextAccessor) : base(options)
         {
             _contextAccessor = contextAccessor;
@@ -22,7 +22,6 @@ namespace MenuApp.DataAccess.EntityFrameWork.Context
         public virtual DbSet<Admin> Admins { get; set; }
         public virtual DbSet<Member> Members { get; set; }
         public virtual DbSet<Menu> Menus { get; set; }
-        public virtual DbSet<MenuSetting> MenuSettings { get; set; }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Food> Foods { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
