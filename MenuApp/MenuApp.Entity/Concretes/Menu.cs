@@ -13,9 +13,11 @@ namespace MenuApp.Entity.Concretes
         }
         //nav props
         public string Name { get; set; }
+        public string BackgroundImage { get; set; }
+        public string TextColor { get; set; }
+        public string ButtonColor { get; set; }
         public Guid UserId { get; set; }
         public virtual Member Member { get; set; }
-        public virtual MenuSetting MenuSetting { get; set; }
         public virtual ICollection<Category> Categories { get; set; }
     }
 }

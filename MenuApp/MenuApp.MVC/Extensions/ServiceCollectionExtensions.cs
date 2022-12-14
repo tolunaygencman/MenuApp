@@ -22,18 +22,17 @@ namespace MenuApp.MVC.Extensions
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IFoodRepository, FoodRepository>();
             services.AddScoped<IMenuRepository, MenuRepository>();
-            services.AddScoped<IMenuSettingRepository, MenuSettingRepository>();
 
         }
         public static void AddBusinessServices(this IServiceCollection services)
         {
             services.AddScoped<IAdminService, AdminManager>();          
             services.AddScoped<IMemberService, MemberManager>();
+            services.AddScoped<IMenuService, MenuManager>();
             /*
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<IFoodService, FoodManager>();
-            services.AddScoped<IMenuService, MenuManager>();
-            services.AddScoped<IMenuSettingService, MenuSettingManager>();
+           
             */
 
         }

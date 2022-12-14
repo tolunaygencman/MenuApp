@@ -13,7 +13,9 @@ namespace MenuApp.Mapping
         {
             base.Configure(builder);
             builder.HasOne(x => x.Member).WithMany(x => x.Menus).HasForeignKey(x => x.UserId);
-            builder.HasOne(ms => ms.MenuSetting).WithOne(m => m.Menu).HasForeignKey<MenuSetting>(ms => ms.MenuId);
+            builder.Property(x => x.BackgroundImage).IsRequired();
+            builder.Property(x => x.TextColor).IsRequired();
+            builder.Property(x => x.ButtonColor).IsRequired();
         }
     }
 }

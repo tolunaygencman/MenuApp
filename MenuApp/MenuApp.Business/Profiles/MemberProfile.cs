@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MenuApp.Business.DTOs.Members;
+using MenuApp.Business.DTOs.Menus;
 using MenuApp.Entity.Concretes;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,10 @@ namespace MenuApp.Business.Profiles
         public MemberProfile()
         {
             CreateMap<Member, MemberDto>();
+
+            //Create Menu
+
+            CreateMap<Menu, MenuDTO>().ReverseMap();
         }
     }
 }
