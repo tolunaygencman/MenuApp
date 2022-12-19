@@ -21,5 +21,8 @@
         public const string MenuAddSuccess = "Menu_Add_Success";
         public const string MenuDoesntExist = "Menu_Doesn't_Exist";
 
+        //Category Create Messages
+        public const string CategoryAddFail = "Category_Add_Fail";
+        public const string CategoryAddSuccess = "Category_Add_Success";
     }
 }

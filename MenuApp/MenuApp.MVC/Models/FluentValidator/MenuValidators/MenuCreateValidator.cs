@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MenuApp.MVC.Models.FluentValidator.MenuValidators
 {
-    public class MenuCreateValidator:AbstractValidator<MenuCreateVM>
+    public class MenuCreateValidator : AbstractValidator<MenuCreateVM>
     {
         public MenuCreateValidator(IStringLocalizer<MenuCreateVM> stringLocalizer)
         {

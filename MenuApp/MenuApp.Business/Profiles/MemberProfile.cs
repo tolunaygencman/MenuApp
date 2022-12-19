@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using MenuApp.Business.DTOs.Categories;
 using MenuApp.Business.DTOs.Members;
 using MenuApp.Business.DTOs.Menus;
 using MenuApp.Entity.Concretes;
@@ -17,6 +18,10 @@ namespace MenuApp.Business.Profiles
             //Create Menu
 
             CreateMap<Menu, MenuDTO>().ReverseMap();
+
+            //Create Category
+
+            CreateMap<Category, CategoryDTO>().ReverseMap();
         }
     }
 }

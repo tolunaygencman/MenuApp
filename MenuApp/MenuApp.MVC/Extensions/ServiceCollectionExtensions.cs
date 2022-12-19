@@ -29,11 +29,8 @@ namespace MenuApp.MVC.Extensions
             services.AddScoped<IAdminService, AdminManager>();          
             services.AddScoped<IMemberService, MemberManager>();
             services.AddScoped<IMenuService, MenuManager>();
-            /*
             services.AddScoped<ICategoryService, CategoryManager>();
-            services.AddScoped<IFoodService, FoodManager>();
-           
-            */
+            services.AddScoped<IFoodService, FoodManager>();          
 
         }
         public static void AddLocalizationServices(this IServiceCollection services)
