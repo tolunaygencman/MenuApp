@@ -117,55 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Admin" xml:space="preserve">
-    <value>Admin</value>
+  <data name="Create_Category_Fail" xml:space="preserve">
+    <value>Kategori eklenirken bir sorun yaşandı.</value>
   </data>
-  <data name="Categories" xml:space="preserve">
-    <value>Kategorileri Göster</value>
-  </data>
-  <data name="Category" xml:space="preserve">
-    <value>Kategori</value>
-  </data>
-  <data name="Category_Description" xml:space="preserve">
-    <value>Kategori Açıklaması</value>
-  </data>
-  <data name="Category_Name" xml:space="preserve">
-    <value>Kategori Adı</value>
-  </data>
-  <data name="Choose_File" xml:space="preserve">
-    <value>Dosya Seç</value>
-  </data>
-  <data name="Confirm_Delete" xml:space="preserve">
-    <value>Silme işlemini onaylıyor musun?</value>
-  </data>
-  <data name="Create" xml:space="preserve">
-    <value>Ekle</value>
-  </data>
-  <data name="Delete" xml:space="preserve">
-    <value>Sil</value>
-  </data>
-  <data name="Edit" xml:space="preserve">
-    <value>Güncelle</value>
-  </data>
-  <data name="Email" xml:space="preserve">
-    <value>E-Posta</value>
-  </data>
-  <data name="Empty_Table" xml:space="preserve">
-    <value>Veri Eklenmemiş</value>
-  </data>
-  <data name="List" xml:space="preserve">
-    <value>{0} Listesi</value>
-  </data>
-  <data name="LogOut" xml:space="preserve">
-    <value>Çıkış Yap</value>
-  </data>
-  <data name="Menu" xml:space="preserve">
-    <value>Menü</value>
-  </data>
-  <data name="Register" xml:space="preserve">
-    <value>Kayıt Ol</value>
-  </data>
-  <data name="Save" xml:space="preserve">
-    <value>Kaydet</value>
+  <data name="Create_Category_Success" xml:space="preserve">
+    <value>Kategori başarıyla eklendi.</value>
   </data>
 </root>
