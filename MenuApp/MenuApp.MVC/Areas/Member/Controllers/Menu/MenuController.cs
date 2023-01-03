@@ -47,14 +47,45 @@ namespace MenuApp.MVC.Areas.Member.Controllers.Menu
             {
                 return View(model);
             }
-            var menu = _mapper.Map<MenuCreateDTO>(model);
+            var menu = _mapper.Map<MenuCreateDto>(model);
             var menuResult = await _menuManager.AddAsync(menu);
             if (menuResult.IsSuccess)
             {
                 _notyf.Success(_localizer["Create_Menu_Success"]);
-                 return RedirectToAction("Index", "Menu");
+                return RedirectToAction("Index", "Menu");
             }
-            _notyf.Warning(_localizer["Create_Menu_Fail"] +" - "+ menuResult.Message);
+            _notyf.Warning(_localizer["Create_Menu_Fail"] + " - " + menuResult.Message);
+            return View(model);
+        }
+        public async Task<IActionResult> Update(Guid id)
+        {
+            var menu = await _menuManager.GetByIdAsync(id);
+            if (string.IsNullOrEmpty(id.ToString()))
+                return NotFound();
+            if (menu is null)
+            {
+                return NotFound();
+            }
+            var mappedMenu = _mapper.Map<MenuUpdateVM>(menu.Data);
+            return View(mappedMenu);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Update(MenuUpdateVM model)
+        {  
+            
+            //Todo :Menu resmi değişikliğini zorunlu halden kaldır.
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            var menu = _mapper.Map<MenuUpdateDto>(model);
+            var menuResult = await _menuManager.UpdateAsync(menu);
+            if (menuResult.IsSuccess)
+            {
+                _notyf.Success(_localizer["Update_Menu_Success"]);
+                return RedirectToAction("Index", "Menu");
+            }
+            _notyf.Warning(_localizer["Update_Menu_Fail"] + " - " + menuResult.Message);
             return View(model);
         }
     }

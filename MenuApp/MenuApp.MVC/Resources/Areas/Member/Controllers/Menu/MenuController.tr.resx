@@ -123,4 +123,10 @@
   <data name="Create_Menu_Success" xml:space="preserve">
     <value>Menü başarıyla eklendi.</value>
   </data>
+  <data name="Update_Menu_Fail" xml:space="preserve">
+    <value>Menü güncellenirken bir sorun yaşandı.</value>
+  </data>
+  <data name="Update_Menu_Success" xml:space="preserve">
+    <value>Menü başarıyla güncellendi.</value>
+  </data>
 </root>

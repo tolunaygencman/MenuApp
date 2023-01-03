@@ -17,21 +17,28 @@ namespace MenuApp.MVC.Profiles
         {
             //Member
             CreateMap<MemberCreateDto, Member>();
-            CreateMap<RegisterVM, MemberCreateDto>().ForMember(dest => dest.Image, src => src.MapFrom(x => Convert.ToBase64String(x.Image.GetBytesAsync().GetAwaiter().GetResult())));        
-            
-            // Menu
-            CreateMap<MenuListVM, MenuListDTO>().ReverseMap();
-            CreateMap<Menu, MenuListDTO>();
+            CreateMap<RegisterVM, MemberCreateDto>().ForMember(dest => dest.Image, src => src.MapFrom(x => Convert.ToBase64String(x.Image.GetBytesAsync().GetAwaiter().GetResult())));
 
-            CreateMap<MenuCreateDTO, Menu>();
-            CreateMap<MenuCreateVM,MenuCreateDTO>().ForMember(dest => dest.BackgroundImage, src => src.MapFrom(x => Convert.ToBase64String(x.BackgroundImage.GetBytesAsync().GetAwaiter().GetResult())));
+            // Menu
+            CreateMap<MenuListVM, MenuListDto>().ReverseMap();
+            CreateMap<Menu, MenuListDto>();
+
+            CreateMap<MenuCreateDto, Menu>();
+            CreateMap<MenuCreateVM, MenuCreateDto>().ForMember(dest => dest.BackgroundImage, src => src.MapFrom(x => Convert.ToBase64String(x.BackgroundImage.GetBytesAsync().GetAwaiter().GetResult())));
+
+            CreateMap<MenuUpdateDto, Menu>();
+            CreateMap<MenuDto, MenuUpdateVM>().ForMember(dest => dest.BackgroundImage, src => src.MapFrom(x => x.BackgroundImage.GetFormFileAsync("BackgroundImage").GetAwaiter().GetResult()));
+            CreateMap<MenuUpdateVM, MenuUpdateDto>().ForMember(dest => dest.BackgroundImage, src => src.MapFrom(x => Convert.ToBase64String(x.BackgroundImage.GetBytesAsync().GetAwaiter().GetResult())));
+
+
+
 
             //Category
-            CreateMap<CategoryListVM, CategoryListDTO>().ReverseMap();
-            CreateMap<Category, CategoryListDTO>();
+            CreateMap<CategoryListVM, CategoryListDto>().ReverseMap();
+            CreateMap<Category, CategoryListDto>();
 
-            CreateMap<CategoryCreateDTO, Category>();
-            CreateMap<CategoryCreateVM, CategoryCreateDTO>().ForMember(dest => dest.Image, src => src.MapFrom(x => Convert.ToBase64String(x.Image.GetBytesAsync().GetAwaiter().GetResult())));
+            CreateMap<CategoryCreateDto, Category>();
+            CreateMap<CategoryCreateVM, CategoryCreateDto>().ForMember(dest => dest.Image, src => src.MapFrom(x => Convert.ToBase64String(x.Image.GetBytesAsync().GetAwaiter().GetResult())));
         }
 
     }
