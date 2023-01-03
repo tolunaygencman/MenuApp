@@ -9,9 +9,10 @@ namespace MenuApp.Business.Abstracts
 {
     public interface IMenuService
     {
-        Task<IDataResult<List<MenuListDTO>>> GetAllAsync();
-        Task<IDataResult<MenuDTO>> AddAsync(MenuCreateDTO entity);
-        Task<IDataResult<MenuDTO>> GetByIdAsync(Guid Id);
+        Task<IDataResult<List<MenuListDto>>> GetAllAsync();
+        Task<IDataResult<MenuDto>> AddAsync(MenuCreateDto entity);
+        Task<IDataResult<MenuDto>> GetByIdAsync(Guid Id);
+        Task<IDataResult<MenuDto>> UpdateAsync(MenuUpdateDto entity);
 
     }
 }

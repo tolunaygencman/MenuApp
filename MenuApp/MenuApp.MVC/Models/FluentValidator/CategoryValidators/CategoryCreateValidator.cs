@@ -15,7 +15,7 @@ namespace MenuApp.MVC.Models.FluentValidator.CategoryValidators
             RuleFor(x => x.Name).NotEmpty().WithMessage(x => stringLocalizer["Empty_Category_Name"]);
 
             RuleFor(x => x.Description).NotEmpty().WithMessage(x => stringLocalizer["Empty_Description"])
-                .Length(256).WithMessage(x => stringLocalizer["Description_Length"]);
+                .MaximumLength(256).WithMessage(x => stringLocalizer["Description_Length"]);
 
             RuleFor(x => x.Image).NotEmpty().WithMessage(x => stringLocalizer["Empty_Category_Image"]);
 

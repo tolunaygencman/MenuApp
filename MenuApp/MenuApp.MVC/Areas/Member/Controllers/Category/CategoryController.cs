@@ -40,7 +40,7 @@ namespace MenuApp.MVC.Areas.Member.Controllers.Category
         }
         [HttpGet]
         public IActionResult Create()
-        {          
+        {
             return View();
         }
         [HttpPost]
@@ -48,16 +48,18 @@ namespace MenuApp.MVC.Areas.Member.Controllers.Category
         {
             if (!ModelState.IsValid)
             {
+                TempData["MenuId"] = model.MenuId;
                 return View(model);
             }
-            var category = _mapper.Map<CategoryCreateDTO>(model);
+            var category = _mapper.Map<CategoryCreateDto>(model);
             var categoryResult = await _categoryManager.AddAsync(category);
             if (categoryResult.IsSuccess)
             {
                 _notyf.Success(_localizer["Create_Category_Success"]);
-                return RedirectToAction("Index", "Menu");
+                return RedirectToAction("Index", "Category", new { id = model.MenuId });
             }
             _notyf.Warning(_localizer["Create_Category_Fail"] + " - " + categoryResult.Message);
+            TempData["MenuId"] = model.MenuId;
             return View(model);
         }
     }

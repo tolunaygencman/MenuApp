@@ -8,7 +8,7 @@ namespace MenuApp.Business.Abstracts
 {
     public interface ICategoryService
     {
-        Task<IDataResult<CategoryDTO>> AddAsync(CategoryCreateDTO entity);
-        Task<IDataResult<List<CategoryListDTO>>> GetAllAsync(Guid id);
+        Task<IDataResult<CategoryDto>> AddAsync(CategoryCreateDto entity);
+        Task<IDataResult<List<CategoryListDto>>> GetAllAsync(Guid id);
     }
 }

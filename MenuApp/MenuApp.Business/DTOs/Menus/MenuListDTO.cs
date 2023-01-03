@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MenuApp.Business.DTOs.Menus
 {
-    public class MenuListDTO
+    public class MenuListDto
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

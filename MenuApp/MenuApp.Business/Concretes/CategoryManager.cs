@@ -25,20 +25,20 @@ namespace MenuApp.Business.Concretes
             _mapper = mapper;
             
         }
-        public async Task<IDataResult<CategoryDTO>> AddAsync(CategoryCreateDTO entity)
+        public async Task<IDataResult<CategoryDto>> AddAsync(CategoryCreateDto entity)
         {
             var categoryCreate = await _categoryRepository.AddAsync(_mapper.Map<Category>(entity));
             if (categoryCreate is null)
             {
-                return new ErrorDataResult<CategoryDTO>(Messages.CategoryAddFail);
+                return new ErrorDataResult<CategoryDto>(Messages.CategoryAddFail);
             }
-            return new SuccessDataResult<CategoryDTO>(_mapper.Map<CategoryDTO>(categoryCreate), Messages.CategoryAddSuccess);
+            return new SuccessDataResult<CategoryDto>(_mapper.Map<CategoryDto>(categoryCreate), Messages.CategoryAddSuccess);
         }
 
-        public async Task<IDataResult<List<CategoryListDTO>>> GetAllAsync(Guid id)
+        public async Task<IDataResult<List<CategoryListDto>>> GetAllAsync(Guid id)
         {           
             var categoryList = await _categoryRepository.GetAllAsync(x=>x.MenuId == id);
-            return new SuccessDataResult<List<CategoryListDTO>>(_mapper.Map<List<CategoryListDTO>>(categoryList), Messages.ListedSuccess);
+            return new SuccessDataResult<List<CategoryListDto>>(_mapper.Map<List<CategoryListDto>>(categoryList), Messages.ListedSuccess);
         }     
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MenuApp.Business.DTOs.Categories
 {
-    public class CategoryListDTO
+    public class CategoryListDto
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
