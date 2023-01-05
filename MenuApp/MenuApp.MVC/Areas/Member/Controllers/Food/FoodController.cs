@@ -1,6 +1,7 @@
 ﻿using AspNetCoreHero.ToastNotification.Abstractions;
 using AutoMapper;
 using MenuApp.Business.Abstracts;
+using MenuApp.MVC.Areas.Member.Models.FoodVMs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Localization;
@@ -28,9 +29,11 @@ namespace MenuApp.MVC.Areas.Member.Controllers.Food
             _localizer = localizer;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index(Guid id)
         {
-            return View();
+            var foods = await _foodManager.GetAllAsync(id);
+            TempData["CategoryId"] = id;
+            return View(_mapper.Map<IList<FoodListVM>>(foods.Data));
         }
     }
 }

@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using MenuApp.Business.DTOs.Categories;
+using MenuApp.Business.DTOs.Foods;
 using MenuApp.Business.DTOs.Members;
 using MenuApp.Business.DTOs.Menus;
 using MenuApp.Entity.Concretes;
 using MenuApp.MVC.Areas.Member.Models.CategoryVMs;
+using MenuApp.MVC.Areas.Member.Models.FoodVMs;
 using MenuApp.MVC.Areas.Member.Models.MenuVMs;
 using MenuApp.MVC.Extensions;
 using MenuApp.MVC.Models.VMs;
@@ -30,15 +32,15 @@ namespace MenuApp.MVC.Profiles
             CreateMap<MenuDto, MenuUpdateVM>().ForMember(dest => dest.BackgroundImage, src => src.MapFrom(x => x.BackgroundImage.GetFormFileAsync("BackgroundImage").GetAwaiter().GetResult()));
             CreateMap<MenuUpdateVM, MenuUpdateDto>().ForMember(dest => dest.BackgroundImage, src => src.MapFrom(x => Convert.ToBase64String(x.BackgroundImage.GetBytesAsync().GetAwaiter().GetResult())));
 
-
-
-
             //Category
             CreateMap<CategoryListVM, CategoryListDto>().ReverseMap();
             CreateMap<Category, CategoryListDto>();
 
             CreateMap<CategoryCreateDto, Category>();
             CreateMap<CategoryCreateVM, CategoryCreateDto>().ForMember(dest => dest.Image, src => src.MapFrom(x => Convert.ToBase64String(x.Image.GetBytesAsync().GetAwaiter().GetResult())));
+
+            //Food
+            CreateMap<FoodListVM, FoodListDto>().ReverseMap();
         }
 
     }
