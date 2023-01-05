@@ -120,9 +120,6 @@
   <data name="Admin" xml:space="preserve">
     <value>Admin</value>
   </data>
-  <data name="Categories" xml:space="preserve">
-    <value>Kategorileri Göster</value>
-  </data>
   <data name="Category" xml:space="preserve">
     <value>Kategori</value>
   </data>
@@ -153,6 +150,18 @@
   <data name="Empty_Table" xml:space="preserve">
     <value>Veri Eklenmemiş</value>
   </data>
+  <data name="Food" xml:space="preserve">
+    <value>Yemek</value>
+  </data>
+  <data name="Food_Description" xml:space="preserve">
+    <value>Yemek Açıklaması</value>
+  </data>
+  <data name="Food_Name" xml:space="preserve">
+    <value>Yemek Adı</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Resim</value>
+  </data>
   <data name="List" xml:space="preserve">
     <value>{0} Listesi</value>
   </data>
@@ -167,5 +176,14 @@
   </data>
   <data name="Save" xml:space="preserve">
     <value>Kaydet</value>
+  </data>
+  <data name="Show_Categories" xml:space="preserve">
+    <value>Kategorileri Göster</value>
+  </data>
+  <data name="Show_Foods" xml:space="preserve">
+    <value>Yemekleri Göster</value>
+  </data>
+  <data name="Transactions" xml:space="preserve">
+    <value>İşlemler</value>
   </data>
 </root>

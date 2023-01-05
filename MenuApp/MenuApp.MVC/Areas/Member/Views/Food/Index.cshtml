@@ -1,7 +1,8 @@
-﻿@model IList<CategoryListVM>
+﻿@model IList<FoodListVM>
 @{
     ViewData["Title"] = "Index";
 }
+
 
 <a class="btn btn-outline-info" asp-action="Create">Create</a>
 
@@ -9,14 +10,14 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th colspan="4">@SharedLocalizer["List", SharedLocalizer["Category"]]</th>
+                <th colspan="4">@SharedLocalizer["List", SharedLocalizer["Food"]]</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>@SharedLocalizer["Image"]</td>
-                <td>@SharedLocalizer["Category_Name"]</td>
-                <td>@SharedLocalizer["Category_Description"]</td>
+                <td>@SharedLocalizer["Food_Name"]</td>
+                <td>@SharedLocalizer["Food_Description"]</td>
                 <td>@SharedLocalizer["Transactions"]</td>
             </tr>
             @if (Model.Count > 0)
@@ -28,7 +29,6 @@
                         <td>@item.Name</td>
                         <td>@item.Description</td>
                         <td>
-                            <a class="btn btn-primary" asp-controller="Food" asp-action="Index" asp-route-id="@item.Id">@SharedLocalizer["Show_Foods"]</a>
                             <a class="btn btn-secondary disabled" asp-action="Update" asp-route-id="@item.Id">@SharedLocalizer["Edit"]</a>
                             <a class="btn btn-danger disabled" asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('@(item.Name) | @SharedLocalizer["Confirm_Delete", SharedLocalizer["Category"]]')"> @SharedLocalizer["Delete"] </a>
                         </td>

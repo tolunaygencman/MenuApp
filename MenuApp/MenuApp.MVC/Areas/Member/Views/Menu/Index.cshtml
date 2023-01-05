@@ -1,4 +1,4 @@
-﻿@model IList<MenuListVM>
+﻿@model List<MenuListVM>
 @{
     ViewData["Title"] = "Index";
 }
@@ -15,7 +15,7 @@
                     </h2>
                     <div class="card-body">
                         <div class="justify-content-between">
-                            <a class="btn btn-primary" asp-controller="Category" asp-action="Index" asp-route-id="@item.Id">@SharedLocalizer["Categories"]</a>
+                            <a class="btn btn-primary" asp-controller="Category" asp-action="Index" asp-route-id="@item.Id">@SharedLocalizer["Show_Categories"]</a>
                             <a class="btn btn-secondary" asp-action="Update" asp-route-id="@item.Id">@SharedLocalizer["Edit"]</a>
                             <a class="btn btn-danger disabled" asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('@(item.Name) | @SharedLocalizer["Confirm_Delete", SharedLocalizer["Menu"]]')"> @SharedLocalizer["Delete"] </a>
                         </div>

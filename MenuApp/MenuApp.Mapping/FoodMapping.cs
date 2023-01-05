@@ -1,5 +1,6 @@
 ﻿using MenuApp.Core.Entities.Mapping;
 using MenuApp.Entity.Concretes;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace MenuApp.Mapping
             builder.Property(x => x.Name).HasMaxLength(256).IsRequired();
             builder.Property(x => x.Description).HasMaxLength(256).IsRequired();
             builder.Property(x => x.Image).IsRequired();
+            builder.Property(x=>x.Price).HasColumnType("Money").IsRequired();
             builder.HasOne(x => x.Category).WithMany(x => x.Foods).HasForeignKey(x => x.CategoryId);
             base.Configure(builder);
         }

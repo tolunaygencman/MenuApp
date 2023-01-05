@@ -98,6 +98,9 @@ namespace MenuApp.MVC
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{area:exists}/{controller=Category}/{action=Index}/{id}");
+                endpoints.MapControllerRoute(
+                   name: "default",
+                   pattern: "{area:exists}/{controller=Food}/{action=Index}/{id}");
             });
         }
     }
