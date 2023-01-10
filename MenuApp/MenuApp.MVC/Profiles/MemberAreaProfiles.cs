@@ -41,6 +41,10 @@ namespace MenuApp.MVC.Profiles
 
             //Food
             CreateMap<FoodListVM, FoodListDto>().ReverseMap();
+            CreateMap<Food, FoodListDto>();
+            CreateMap<FoodCreateDto, Food>();
+            CreateMap<FoodCreateVM, FoodCreateDto>().ForMember(dest => dest.Image, src => src.MapFrom(x => Convert.ToBase64String(x.Image.GetBytesAsync().GetAwaiter().GetResult())));
+
         }
 
     }
