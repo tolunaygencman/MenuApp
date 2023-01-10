@@ -1,6 +1,7 @@
 ﻿using AspNetCoreHero.ToastNotification.Abstractions;
 using AutoMapper;
 using MenuApp.Business.Abstracts;
+using MenuApp.Business.DTOs.Foods;
 using MenuApp.MVC.Areas.Member.Models.FoodVMs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -34,6 +35,29 @@ namespace MenuApp.MVC.Areas.Member.Controllers.Food
             var foods = await _foodManager.GetAllAsync(id);
             TempData["CategoryId"] = id;
             return View(_mapper.Map<IList<FoodListVM>>(foods.Data));
+        }
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(FoodCreateVM model)
+        {
+            if (!ModelState.IsValid)
+            {
+                TempData["CategoryId"] = model.CategoryId;
+                return View(model);
+            }
+            var food = _mapper.Map<FoodCreateDto>(model);
+            var foodResult = await _foodManager.AddAsync(food);
+            if (foodResult.IsSuccess)
+            {
+                _notyf.Success(_localizer["Create_Food_Success"]);
+                return RedirectToAction("Index", "Food", new { id = model.CategoryId });
+            }
+            _notyf.Warning(_localizer["Create_Category_Fail"] + " - " + foodResult.Message);
+            TempData["MenuId"] = model.CategoryId;
+            return View(model);
         }
     }
 }
