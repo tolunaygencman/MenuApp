@@ -49,7 +49,7 @@ namespace MenuApp.Business.Concretes
 
         public async Task<IDataResult<MenuDto>> GetByIdAsync(Guid Id)
         {
-            var menu = await _menuRepository.GetAsync(x => x.Id == Id);
+            var menu = await _menuRepository.GetByIdAsync(Id);
             if (menu is null)
             {
                 return new ErrorDataResult<MenuDto>(Messages.MenuDoesntExist);

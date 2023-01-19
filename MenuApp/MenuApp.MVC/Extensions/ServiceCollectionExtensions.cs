@@ -26,11 +26,13 @@ namespace MenuApp.MVC.Extensions
         }
         public static void AddBusinessServices(this IServiceCollection services)
         {
-            services.AddScoped<IAdminService, AdminManager>();          
+            services.AddScoped<IAccountService, AccountManager>();
+            services.AddScoped<IAdminService, AdminManager>();
             services.AddScoped<IMemberService, MemberManager>();
             services.AddScoped<IMenuService, MenuManager>();
             services.AddScoped<ICategoryService, CategoryManager>();
-            services.AddScoped<IFoodService, FoodManager>();          
+            services.AddScoped<IFoodService, FoodManager>();
+            services.AddScoped<IDisplayService, DisplayManager>();
 
         }
         public static void AddLocalizationServices(this IServiceCollection services)
@@ -55,7 +57,7 @@ namespace MenuApp.MVC.Extensions
                 options.Password.RequireUppercase = true;
                 options.Password.RequiredUniqueChars = 1;
                  */
-                options.Password.RequiredLength = 4;
+                options.Password.RequiredLength = 8;
                 options.Password.RequireDigit = false;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireLowercase = false;
@@ -83,7 +85,7 @@ namespace MenuApp.MVC.Extensions
 
         public static void AddAutoMapperServices(this IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(IProfile), typeof(AdminAreaProfiles), typeof(MemberAreaProfiles));  
+            services.AddAutoMapper(typeof(IProfile), typeof(AdminAreaProfiles), typeof(MemberAreaProfiles), typeof(DisplayProfiles));
         }
         public static void AddNotyfServices(this IServiceCollection services)
         {

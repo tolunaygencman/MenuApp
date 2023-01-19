@@ -39,6 +39,16 @@ namespace MenuApp.Business.Concretes
         {           
             var categoryList = await _categoryRepository.GetAllAsync(x=>x.MenuId == id);
             return new SuccessDataResult<List<CategoryListDto>>(_mapper.Map<List<CategoryListDto>>(categoryList), Messages.ListedSuccess);
-        }     
+        }
+
+        public async Task<IDataResult<CategoryDto>> GetByIdAsync(Guid id)
+        {
+            var category = await _categoryRepository.GetByIdAsync(id);
+            if (category is null)
+            {
+                return new ErrorDataResult<CategoryDto>(Messages.CategoryDoesntExist);
+            }
+            return new SuccessDataResult<CategoryDto>(_mapper.Map<CategoryDto>(category), Messages.ListedSuccess);
+        }
     }
 }

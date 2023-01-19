@@ -15,6 +15,10 @@ namespace MenuApp.DataAccess.EntityFrameWork.Context
     public class MenuAppDbContext : IdentityDbContext
     {     
         private readonly IHttpContextAccessor _contextAccessor;
+        public MenuAppDbContext()
+        {
+
+        }
         public MenuAppDbContext(DbContextOptions<MenuAppDbContext> options, IHttpContextAccessor contextAccessor) : base(options)
         {
             _contextAccessor = contextAccessor;
