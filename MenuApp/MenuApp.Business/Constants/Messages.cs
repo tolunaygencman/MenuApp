@@ -2,6 +2,8 @@
 {
     public class Messages
     {
+        //Account Messages
+        public const string PasswordChangeSuccess = "Password_Change_Success";
         //List Messages
         public const string ListedSuccess = "Listed_Success";
         public const string ListReceived = "List_Received";
@@ -26,6 +28,7 @@
         //Category  Messages
         public const string CategoryAddFail = "Category_Add_Fail";
         public const string CategoryAddSuccess = "Category_Add_Success";
+        public const string CategoryDoesntExist = "Category_Doesn't_Exist";
         //Food Messages
         public const string FoodAddFail = "Food_Add_Fail";
         public const string FoodAddSuccess = "Food_Add_Success";

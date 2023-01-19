@@ -26,7 +26,7 @@ namespace MenuApp.Business.Concretes
 
         public async Task<IDataResult<AdminDto>> GetByIdentityId(string identityId)
         {
-            var admin =await _adminRepository.GetAsync(x => x.IdentityId == identityId);
+            var admin = await _adminRepository.GetAsync(x => x.IdentityId == identityId);
             if (admin is null)
             {
                 return new ErrorDataResult<AdminDto>(Messages.UserNotFound);

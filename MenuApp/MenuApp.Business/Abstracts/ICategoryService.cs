@@ -10,5 +10,6 @@ namespace MenuApp.Business.Abstracts
     {
         Task<IDataResult<CategoryDto>> AddAsync(CategoryCreateDto entity);
         Task<IDataResult<List<CategoryListDto>>> GetAllAsync(Guid id);
+        Task<IDataResult<CategoryDto>> GetByIdAsync(Guid id);
     }
 }
