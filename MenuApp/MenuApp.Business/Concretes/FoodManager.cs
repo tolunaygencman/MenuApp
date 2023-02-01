@@ -34,10 +34,26 @@ namespace MenuApp.Business.Concretes
             return new SuccessDataResult<FoodDto>(_mapper.Map<FoodDto>(foodCreate), Messages.FoodAddSuccess);
         }
 
+        public async Task<bool> DeleteAsync(FoodDto entity)
+        {
+            var deletedFood = await _foodRepository.GetAsync(x => x.Id == entity.Id);
+            return await _foodRepository.DeleteAsync(deletedFood);
+        }
+
         public async Task<IDataResult<List<FoodListDto>>> GetAllAsync(Guid id)
         {
             var foodList = await _foodRepository.GetAllAsync(x => x.CategoryId == id);
             return new SuccessDataResult<List<FoodListDto>>(_mapper.Map<List<FoodListDto>>(foodList), Messages.ListedSuccess);
+        }
+
+        public async Task<IDataResult<FoodDto>> GetByIdAsync(Guid id)
+        {
+            var food = await _foodRepository.GetByIdAsync(id);
+            if (food is null)
+            {
+                return new ErrorDataResult<FoodDto>(Messages.FoodNotFound);
+            }
+            return new SuccessDataResult<FoodDto>(_mapper.Map<FoodDto>(food), Messages.FoundSuccess);
         }
     }
 }

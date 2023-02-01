@@ -71,22 +71,37 @@ namespace MenuApp.MVC.Areas.Member.Controllers.Menu
         }
         [HttpPost]
         public async Task<IActionResult> Update(MenuUpdateVM model)
-        {  
-            
-            //Todo :Menu resmi değişikliğini zorunlu halden kaldır.
+        {
+
+            //Todo :Only use 1 method with or witout image change
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
-            var menu = _mapper.Map<MenuUpdateDto>(model);
-            var menuResult = await _menuManager.UpdateAsync(menu);
-            if (menuResult.IsSuccess)
+            if (model.BackgroundImage is null)
             {
-                _notyf.Success(_localizer["Update_Menu_Success"]);
-                return RedirectToAction("Index", "Menu");
+                var menu = _mapper.Map<MenuUpdateWithoutImgDto>(model);
+                var menuResult = await _menuManager.UpdateWithoutImgAsync(menu);
+                if (menuResult.IsSuccess)
+                {
+                    _notyf.Success(_localizer["Update_Menu_Success"]);
+                    return RedirectToAction("Index", "Menu");
+                }
+                _notyf.Warning(_localizer["Update_Menu_Fail"] + " - " + menuResult.Message);
+                return View(model);
             }
-            _notyf.Warning(_localizer["Update_Menu_Fail"] + " - " + menuResult.Message);
-            return View(model);
+            else
+            {
+                var menu = _mapper.Map<MenuUpdateDto>(model);
+                var menuResult = await _menuManager.UpdateAsync(menu);
+                if (menuResult.IsSuccess)
+                {
+                    _notyf.Success(_localizer["Update_Menu_Success"]);
+                    return RedirectToAction("Index", "Menu");
+                }
+                _notyf.Warning(_localizer["Update_Menu_Fail"] + " - " + menuResult.Message);
+                return View(model);
+            }
         }
     }
 }

@@ -4,9 +4,9 @@
 }
 
 
-<a class="btn btn-outline-info" asp-action="Create">Create</a>
 
 <div class="container m-2 ">
+    <a class="btn btn-outline-info" asp-action="Create">@SharedLocalizer["Create", SharedLocalizer["Food"]]</a>
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -30,7 +30,7 @@
                         <td>@item.Description</td>
                         <td>
                             <a class="btn btn-secondary disabled" asp-action="Update" asp-route-id="@item.Id">@SharedLocalizer["Edit"]</a>
-                            <a class="btn btn-danger disabled" asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('@(item.Name) | @SharedLocalizer["Confirm_Delete", SharedLocalizer["Category"]]')"> @SharedLocalizer["Delete"] </a>
+                            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('@(item.Name) | @SharedLocalizer["Confirm_Delete", SharedLocalizer["Food"]]')"> @SharedLocalizer["Delete"] </a>
                         </td>
                     </tr>
                 }

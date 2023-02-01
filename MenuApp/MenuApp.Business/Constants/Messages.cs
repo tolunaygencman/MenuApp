@@ -32,5 +32,6 @@
         //Food Messages
         public const string FoodAddFail = "Food_Add_Fail";
         public const string FoodAddSuccess = "Food_Add_Success";
+        public const string FoodNotFound = "Food_Not_Found";
     }
 }

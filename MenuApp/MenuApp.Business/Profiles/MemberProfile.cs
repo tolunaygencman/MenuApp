@@ -19,6 +19,8 @@ namespace MenuApp.Business.Profiles
             //Create Menu
 
             CreateMap<Menu, MenuDto>().ReverseMap();
+            CreateMap<Menu, MenuUpdateDto>().ReverseMap();
+            CreateMap<Menu, MenuUpdateWithoutImgDto>().ReverseMap();
 
             //Create Category
 

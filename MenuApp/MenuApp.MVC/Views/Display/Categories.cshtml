@@ -1,7 +1,28 @@
 ﻿@model DisplayCategoriesVM
 @{
-    ViewData["Title"] = "Categories";
+    ViewData["Title"] = Model.MenuName;
+    Layout = "~/Views/Shared/_DisplayLayout.cshtml";
 }
+<style>
+    td{
+        background-color:@Model.ButtonColor
+    }
+</style>
 
-<h1>Categories</h1>
+<div class="container-fluid" style="background:url(@(string.Format("data:image/png;base64,{0}",Model.BackgroundImage))) ">
+    <h1>@Model.MenuName</h1>
+    <table>
+        @foreach (var item in Model.Categories)
+        {
+            <tr style="color:@Model.TextColor;">
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td><img style="min-width: 100px; max-width: 300px; height: auto;" src="@(string.Format("data:image/png;base64,{0}", item.Image))" /></td>
+                <td><a class="btn btn-primary" asp-action="Foods" asp-route-id="@item.Id">@SharedLocalizer["Show_Foods"]</a></td>
+            </tr>
+        }
+    </table>
+</div>
+
+
 

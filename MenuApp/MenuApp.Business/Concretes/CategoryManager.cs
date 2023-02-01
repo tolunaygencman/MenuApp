@@ -35,6 +35,12 @@ namespace MenuApp.Business.Concretes
             return new SuccessDataResult<CategoryDto>(_mapper.Map<CategoryDto>(categoryCreate), Messages.CategoryAddSuccess);
         }
 
+        public async Task<bool> DeleteAsync(CategoryDto entity)
+        {
+            var deletedCategory = await _categoryRepository.GetAsync(x => x.Id == entity.Id);
+            return await _categoryRepository.DeleteAsync(deletedCategory);
+        }
+
         public async Task<IDataResult<List<CategoryListDto>>> GetAllAsync(Guid id)
         {           
             var categoryList = await _categoryRepository.GetAllAsync(x=>x.MenuId == id);
