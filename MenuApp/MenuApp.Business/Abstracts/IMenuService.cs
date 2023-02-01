@@ -13,6 +13,7 @@ namespace MenuApp.Business.Abstracts
         Task<IDataResult<MenuDto>> AddAsync(MenuCreateDto entity);
         Task<IDataResult<MenuDto>> GetByIdAsync(Guid Id);
         Task<IDataResult<MenuDto>> UpdateAsync(MenuUpdateDto entity);
+        Task<IDataResult<MenuDto>> UpdateWithoutImgAsync(MenuUpdateWithoutImgDto entity);
 
     }
 }

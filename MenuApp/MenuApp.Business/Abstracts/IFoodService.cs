@@ -11,5 +11,7 @@ namespace MenuApp.Business.Abstracts
     {
         Task<IDataResult<FoodDto>> AddAsync(FoodCreateDto entity);
         Task<IDataResult<List<FoodListDto>>> GetAllAsync(Guid id);
+        Task<IDataResult<FoodDto>> GetByIdAsync(Guid id);
+        Task<bool> DeleteAsync(FoodDto entity);
     }
 }

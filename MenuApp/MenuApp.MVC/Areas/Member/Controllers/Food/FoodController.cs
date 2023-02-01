@@ -59,5 +59,21 @@ namespace MenuApp.MVC.Areas.Member.Controllers.Food
             TempData["MenuId"] = model.CategoryId;
             return View(model);
         }
+
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            if (string.IsNullOrEmpty(id.ToString()))
+                return NotFound();
+
+            var deletedFood = await _foodManager.GetByIdAsync(id);
+            var indexId = deletedFood.Data.CategoryId;
+
+            if (deletedFood == null)
+                return NotFound();
+
+            await _foodManager.DeleteAsync(deletedFood.Data);
+            _notyf.Error(_localizer["Delete_Success"]);
+            return RedirectToAction("Index", "Food", new { id = indexId});
+        }
     }
 }

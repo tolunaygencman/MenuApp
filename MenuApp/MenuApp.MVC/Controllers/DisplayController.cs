@@ -23,12 +23,12 @@ namespace MenuApp.MVC.Controllers
         public async Task<IActionResult> Categories(Guid Id)
         {
             var model = await _displayManager.GetDisplayCategories(Id);
-            return View(_mapper.Map<DisplayCategoriesVM>(model));
+            return View(_mapper.Map<DisplayCategoriesVM>(model.Data));
         }
         public async Task<IActionResult> Foods(Guid Id)
         {
             var model = await _displayManager.GetDisplayFoods(Id);
-            return View(_mapper.Map<DisplayFoodsVM>(model));
+            return View(_mapper.Map<DisplayFoodsVM>(model.Data));
         }
        
     }

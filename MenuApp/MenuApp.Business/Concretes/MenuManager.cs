@@ -71,6 +71,19 @@ namespace MenuApp.Business.Concretes
             return new SuccessDataResult<MenuDto>(_mapper.Map<MenuDto>(updatedMenu), Messages.MenuUpdateSuccess);
         }
 
+        public async Task<IDataResult<MenuDto>> UpdateWithoutImgAsync(MenuUpdateWithoutImgDto entity)
+        {
+            var menuTobeUpdated = await _menuRepository.GetByIdAsync(entity.Id);
+            var mappedMenu = _mapper.Map(entity, menuTobeUpdated);
+            var updatedMenu = await _menuRepository.UpdateAsync(mappedMenu);
+
+            if (updatedMenu is null)
+            {
+                return new ErrorDataResult<MenuDto>(_mapper.Map<MenuDto>(updatedMenu), Messages.MenuUpdateFail);
+            }
+            return new SuccessDataResult<MenuDto>(_mapper.Map<MenuDto>(updatedMenu), Messages.MenuUpdateSuccess); 
+        }
+
         private Guid GetMemberId()
         {
             var currentMember = _memberManager.GetByIdentityId(_httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier)).GetAwaiter().GetResult();
