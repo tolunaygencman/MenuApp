@@ -165,6 +165,9 @@
   <data name="Food_Name" xml:space="preserve">
     <value>Yemek Adı</value>
   </data>
+  <data name="Food_Price" xml:space="preserve">
+    <value>Yemek Fiyatı</value>
+  </data>
   <data name="Image" xml:space="preserve">
     <value>Resim</value>
   </data>

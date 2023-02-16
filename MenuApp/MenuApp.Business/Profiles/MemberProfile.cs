@@ -28,6 +28,8 @@ namespace MenuApp.Business.Profiles
 
             //Create Food
             CreateMap<Food, FoodDto>().ReverseMap();
+            CreateMap<Food, FoodUpdateDto>().ReverseMap();
+            CreateMap<Food, FoodUpdateWithoutImgDto>().ReverseMap();
         }
     }
 }
