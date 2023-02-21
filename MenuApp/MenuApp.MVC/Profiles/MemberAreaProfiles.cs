@@ -39,6 +39,12 @@ namespace MenuApp.MVC.Profiles
 
             CreateMap<CategoryCreateDto, Category>();
             CreateMap<CategoryCreateVM, CategoryCreateDto>().ForMember(dest => dest.Image, src => src.MapFrom(x => Convert.ToBase64String(x.Image.GetBytesAsync().GetAwaiter().GetResult())));
+            
+            CreateMap<CategoryUpdateDto, Category>();
+            CreateMap<CategoryDto, CategoryUpdateVM>().ForMember(dest => dest.Image, src => src.MapFrom(x => x.Image.GetFormFileAsync("BackgroundImage").GetAwaiter().GetResult()));
+            CreateMap<CategoryUpdateVM, CategoryUpdateDto>().ForMember(dest => dest.Image, src => src.MapFrom(x => Convert.ToBase64String(x.Image.GetBytesAsync().GetAwaiter().GetResult())));
+            CreateMap<CategoryUpdateVM, CategoryUpdateWithoutImgDto>();
+
 
             //Food
             CreateMap<FoodListVM, FoodListDto>().ReverseMap();

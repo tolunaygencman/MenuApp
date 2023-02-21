@@ -18,8 +18,6 @@ namespace MenuApp.MVC.Models.FluentValidator.MenuValidators
 
             RuleFor(x => x.ButtonColor).NotEmpty().WithMessage(x => stringLocalizer["Empty_ButtonColor"]);
 
-            //RuleFor(x => x.BackgroundImage).NotEmpty().WithMessage(x => stringLocalizer["Empty_Menu_Background"]);
-
             RuleFor(x => x.BackgroundImage.Length).LessThanOrEqualTo(5242880)
                .WithMessage(x => stringLocalizer["File_Size"]).When(x => x.BackgroundImage != null);
 

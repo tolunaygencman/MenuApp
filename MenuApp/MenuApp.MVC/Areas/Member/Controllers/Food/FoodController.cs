@@ -75,7 +75,7 @@ namespace MenuApp.MVC.Areas.Member.Controllers.Food
         [HttpPost]
         public async Task<IActionResult> Update(FoodUpdateVM model)
         {
-
+            //Todo:Price input doesn't add true values everytime
             //Todo :Only use 1 method with or witout image change
             if (!ModelState.IsValid)
             {

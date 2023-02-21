@@ -31,14 +31,12 @@ namespace MenuApp.MVC.Areas.Member.Controllers.Category
         }
         //TODO : url de menü adı gösterme bul guid yerine
 
-        [HttpGet]
         public async Task<IActionResult> Index(Guid id)
         {
             var categories = await _categoryManager.GetAllAsync(id);
             TempData["MenuId"] = id;
             return View(_mapper.Map<IList<CategoryListVM>>(categories.Data));
         }
-        [HttpGet]
         public IActionResult Create()
         {
             return View();
@@ -61,6 +59,54 @@ namespace MenuApp.MVC.Areas.Member.Controllers.Category
             _notyf.Warning(_localizer["Create_Category_Fail"] + " - " + categoryResult.Message);
             TempData["MenuId"] = model.MenuId;
             return View(model);
+        }
+
+        public async Task<IActionResult> Update(Guid id)
+        {
+            var category = await _categoryManager.GetByIdAsync(id);
+            TempData["MenuId"] = category.Data.MenuId;
+            if (string.IsNullOrEmpty(id.ToString()))
+                return NotFound();
+            if (category is null)
+            {
+                return NotFound();
+            }
+            var mappedCategory = _mapper.Map<CategoryUpdateVM>(category.Data);
+            return View(mappedCategory);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Update(CategoryUpdateVM model)
+        {
+
+            //Todo :Only use 1 method with or witout image change
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            if (model.Image is null)
+            {
+                var category = _mapper.Map<CategoryUpdateWithoutImgDto>(model);
+                var categoryResult = await _categoryManager.UpdateWithoutImgAsync(category);
+                if (categoryResult.IsSuccess)
+                {
+                    _notyf.Success(_localizer["Update_Food_Success"]);
+                    return RedirectToAction("Index", "Category", new { id = model.MenuId });
+                }
+                _notyf.Warning(_localizer["Update_Food_Fail"] + " - " + categoryResult.Message);
+                return View(model);
+            }
+            else
+            {
+                var category = _mapper.Map<CategoryUpdateDto>(model);
+                var categoryResult = await _categoryManager.UpdateAsync(category);
+                if (categoryResult.IsSuccess)
+                {
+                    _notyf.Success(_localizer["Update_Category_Success"]);
+                    return RedirectToAction("Index", "Category", new { id = model.MenuId });
+                }
+                _notyf.Warning(_localizer["Update_Food_Fail"] + " - " + categoryResult.Message);
+                return View(model);
+            }
         }
         public async Task<IActionResult> Delete(Guid id)
         {

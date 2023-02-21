@@ -17,8 +17,6 @@ namespace MenuApp.MVC.Models.FluentValidator.FoodValidators
             RuleFor(x => x.Description).NotEmpty().WithMessage(x => stringLocalizer["Empty_Description"])
                 .MaximumLength(256).WithMessage(x => stringLocalizer["Description_Length"]);
 
-            //RuleFor(x => x.Image).NotEmpty().WithMessage(x => stringLocalizer["Empty_Food_Image"]);
-
             RuleFor(x => x.Price).NotEmpty().WithMessage(x => stringLocalizer["Empty_Price"]);
 
             RuleFor(x => x.Image.Length).LessThanOrEqualTo(5242880)
