@@ -16,18 +16,22 @@ namespace MenuApp.Business.Profiles
         {
             CreateMap<Member, MemberDto>();
 
-            //Create Menu
+            //Menu
 
             CreateMap<Menu, MenuDto>().ReverseMap();
             CreateMap<Menu, MenuUpdateDto>().ReverseMap();
             CreateMap<Menu, MenuUpdateWithoutImgDto>().ReverseMap();
 
-            //Create Category
+            //Category
 
             CreateMap<Category, CategoryDto>().ReverseMap();
+            CreateMap<Category, CategoryUpdateDto>().ReverseMap();
+            CreateMap<Category, CategoryUpdateWithoutImgDto>().ReverseMap();
 
-            //Create Food
+            // Food
             CreateMap<Food, FoodDto>().ReverseMap();
+            CreateMap<Food, FoodUpdateDto>().ReverseMap();
+            CreateMap<Food, FoodUpdateWithoutImgDto>().ReverseMap();
         }
     }
 }

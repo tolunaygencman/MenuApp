@@ -56,5 +56,31 @@ namespace MenuApp.Business.Concretes
             }
             return new SuccessDataResult<CategoryDto>(_mapper.Map<CategoryDto>(category), Messages.ListedSuccess);
         }
+
+        public async Task<IDataResult<CategoryDto>> UpdateAsync(CategoryUpdateDto entity)
+        {
+            var categoryTobeUpdated = await _categoryRepository.GetByIdAsync(entity.Id);
+            var mappedCategory = _mapper.Map(entity, categoryTobeUpdated);
+            var updatedCategory = await _categoryRepository.UpdateAsync(mappedCategory);
+
+            if (updatedCategory is null)
+            {
+                return new ErrorDataResult<CategoryDto>(_mapper.Map<CategoryDto>(updatedCategory), Messages.CategoryUpdateFail);
+            }
+            return new SuccessDataResult<CategoryDto>(_mapper.Map<CategoryDto>(updatedCategory), Messages.CategoryUpdateSuccess);
+        }
+
+        public async Task<IDataResult<CategoryDto>> UpdateWithoutImgAsync(CategoryUpdateWithoutImgDto entity)
+        {
+            var categoryTobeUpdated = await _categoryRepository.GetByIdAsync(entity.Id);
+            var mappedCategory = _mapper.Map(entity, categoryTobeUpdated);
+            var updatedCategory = await _categoryRepository.UpdateAsync(mappedCategory);
+
+            if (updatedCategory is null)
+            {
+                return new ErrorDataResult<CategoryDto>(_mapper.Map<CategoryDto>(updatedCategory), Messages.CategoryUpdateFail);
+            }
+            return new SuccessDataResult<CategoryDto>(_mapper.Map<CategoryDto>(updatedCategory), Messages.CategoryUpdateSuccess);
+        }
     }
 }

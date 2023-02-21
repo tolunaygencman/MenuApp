@@ -117,16 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Create_Food_Success" xml:space="preserve">
-    <value>Yemek ekleme işlemi tamamlandı.</value>
+  <data name="Correct_Image_File_Type" xml:space="preserve">
+    <value>Sadece jpg/jpeg/png formatındaki dosyalar yüklenebilir.</value>
   </data>
-  <data name="Delete_Success" xml:space="preserve">
-    <value>Silme işlemi tamamlandı.</value>
+  <data name="Description_Length" xml:space="preserve">
+    <value>Açıklama 256 karakterden uzun olamaz.</value>
   </data>
-  <data name="Update_Food_Fail" xml:space="preserve">
-    <value>Menü güncellenirken bir sorun yaşandı.</value>
+  <data name="Empty_Category_Name" xml:space="preserve">
+    <value>Kategori adı boş bırakılamaz.</value>
   </data>
-  <data name="Update_Food_Success" xml:space="preserve">
-    <value>Yemek güncelleme işlemi tamamlandı.</value>
+  <data name="Empty_Description" xml:space="preserve">
+    <value>Açıklama boş bırakılamaz.</value>
+  </data>
+  <data name="File_Size" xml:space="preserve">
+    <value>Dosya boyutu 5 MB'tan büyük olamaz.</value>
   </data>
 </root>

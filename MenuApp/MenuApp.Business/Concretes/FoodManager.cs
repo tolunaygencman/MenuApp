@@ -55,5 +55,31 @@ namespace MenuApp.Business.Concretes
             }
             return new SuccessDataResult<FoodDto>(_mapper.Map<FoodDto>(food), Messages.FoundSuccess);
         }
+
+        public async Task<IDataResult<FoodDto>> UpdateAsync(FoodUpdateDto entity)
+        {
+            var foodTobeUpdated = await _foodRepository.GetByIdAsync(entity.Id);
+            var mappedFood = _mapper.Map(entity, foodTobeUpdated);
+            var updatedFood = await _foodRepository.UpdateAsync(mappedFood);
+
+            if (updatedFood is null)
+            {
+                return new ErrorDataResult<FoodDto>(_mapper.Map<FoodDto>(updatedFood), Messages.MenuUpdateFail);
+            }
+            return new SuccessDataResult<FoodDto>(_mapper.Map<FoodDto>(updatedFood), Messages.MenuUpdateSuccess);
+        }
+
+        public async Task<IDataResult<FoodDto>> UpdateWithoutImgAsync(FoodUpdateWithoutImgDto entity)
+        {
+            var foodTobeUpdated = await _foodRepository.GetByIdAsync(entity.Id);
+            var mappedFood = _mapper.Map(entity, foodTobeUpdated);
+            var updatedFood = await _foodRepository.UpdateAsync(mappedFood);
+
+            if (updatedFood is null)
+            {
+                return new ErrorDataResult<FoodDto>(_mapper.Map<FoodDto>(updatedFood), Messages.MenuUpdateFail);
+            }
+            return new SuccessDataResult<FoodDto>(_mapper.Map<FoodDto>(updatedFood), Messages.MenuUpdateSuccess);
+        }
     }
 }

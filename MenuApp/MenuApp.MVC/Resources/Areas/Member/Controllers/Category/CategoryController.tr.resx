@@ -126,4 +126,10 @@
   <data name="Delete_Success" xml:space="preserve">
     <value>Silme işlemi tamamlandı.</value>
   </data>
+  <data name="Update_Category_Fail" xml:space="preserve">
+    <value>Kategori güncellenirken bir sorun yaşandı.</value>
+  </data>
+  <data name="Update_Category_Success" xml:space="preserve">
+    <value>Kategori güncelleme işlemi tamamlandı.</value>
+  </data>
 </root>

@@ -29,9 +29,14 @@
         public const string CategoryAddFail = "Category_Add_Fail";
         public const string CategoryAddSuccess = "Category_Add_Success";
         public const string CategoryDoesntExist = "Category_Doesn't_Exist";
+        public const string CategoryUpdateFail = "Category_Update_Fail";
+        public const string CategoryUpdateSuccess = "Category_Update_Success";
+
         //Food Messages
         public const string FoodAddFail = "Food_Add_Fail";
         public const string FoodAddSuccess = "Food_Add_Success";
         public const string FoodNotFound = "Food_Not_Found";
+        public const string FoodUpdateFail = "Food_Update_Fail";
+        public const string FoodUpdateSuccess = "Food_Update_Success";
     }
 }
