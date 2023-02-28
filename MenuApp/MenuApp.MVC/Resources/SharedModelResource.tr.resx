@@ -168,6 +168,9 @@
   <data name="Food_Price" xml:space="preserve">
     <value>Yemek Fiyatı</value>
   </data>
+  <data name="Get_QR_Code" xml:space="preserve">
+    <value>QR kodu al</value>
+  </data>
   <data name="Image" xml:space="preserve">
     <value>Resim</value>
   </data>

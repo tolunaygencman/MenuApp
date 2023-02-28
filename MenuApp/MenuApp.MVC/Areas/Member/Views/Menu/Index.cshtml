@@ -20,6 +20,7 @@
                         <a class="btn btn-secondary" asp-action="Update" asp-route-id="@item.Id">@SharedLocalizer["Edit"]</a>
                         <a class="btn btn-danger disabled" asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('@(item.Name) | @SharedLocalizer["Confirm_Delete", SharedLocalizer["Menu"]]')"> @SharedLocalizer["Delete"] </a>
                         <a class="btn btn-info" target="_blank" asp-area="" asp-controller="Display" asp-action="Categories" asp-route-id="@item.Id"> @SharedLocalizer["Display"] </a>
+                        <a class="btn btn-info" target="_blank" asp-area="" asp-controller="Display" asp-action="QRCode" asp-route-id="@item.Id"> @SharedLocalizer["Get_QR_Code"] </a>
                     </div>
                 </div>
             </div>
