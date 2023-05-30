@@ -13,6 +13,8 @@ namespace MenuApp.MVC.Models.VMs
         public string Email { get; set; }
         public string RestourantName { get; set; } 
         public string Address { get; set; }
+        public string Password { get; set; }
+        public string ConfirmPassword { get; set; }
         public IFormFile Image { get; set; }
     }
 }

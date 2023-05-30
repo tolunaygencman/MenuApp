@@ -40,7 +40,7 @@ namespace MenuApp.Business.Concretes
                 try
                 {
                     //StringGenerator.GenerateRandomPassword(); Mail entegrasyonundan sonra kullanıcıya bu şifre gönderilecek.
-                    var memberCreateResult = await _userManager.CreateAsync(identityUser, "1234");
+                    var memberCreateResult = await _userManager.CreateAsync(identityUser, entity.Password);
 
                     if (!memberCreateResult.Succeeded)
                     {
