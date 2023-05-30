@@ -126,6 +126,9 @@
   <data name="Empty_Email" xml:space="preserve">
     <value>Email boş bırakılamaz</value>
   </data>
+  <data name="Empty_Password" xml:space="preserve">
+    <value>Şifre boş bırakılamaz.</value>
+  </data>
   <data name="File_Size" xml:space="preserve">
     <value>Dosya boyutu 5 MB'tan büyük olamaz.</value>
   </data>
@@ -140,6 +143,12 @@
   </data>
   <data name="LastName_Not_Empty" xml:space="preserve">
     <value>Soyisim boş bırakılamaz.</value>
+  </data>
+  <data name="Password_Control" xml:space="preserve">
+    <value>Şifre doğrulama ile yeni şifre aynı olmalıdır.</value>
+  </data>
+  <data name="Password_Minumum_Length" xml:space="preserve">
+    <value>Şifre 8 karakterden az olamaz.</value>
   </data>
   <data name="Restourant_Not_Empty" xml:space="preserve">
     <value>Restoran adı boş bırakılamaz.</value>

@@ -3,28 +3,61 @@
     ViewData["Title"] = Model.CategoryName;
     Layout = "~/Views/Shared/_DisplayLayout.cshtml";
 }
-<style>
-    td{
-        background-color:@Model.ButtonColor
-    }
-</style>
+@*<style>
+        td{
+            background-color:@Model.ButtonColor
+        }
+    </style>
+
+    <div class="container-fluid" style="background:url(@(string.Format("data:image/png;base64,{0}",Model.BackgroundImage)))">
+        <h1>@Model.CategoryName</h1>
+        <h3>@Model.Description</h3>
+        <table>
+            @foreach (var item in Model.Foods)
+            {
+                <tr style="color:@Model.TextColor;">
+                    <td><img style="min-width: 100px; max-width: 300px; height: auto;" src="@(string.Format("data:image/png;base64,{0}", item.Image))" /></td>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.Price</td>
+                </tr>
+            }
+
+        </table>
+    </div>*@
 
 <div class="container-fluid" style="background:url(@(string.Format("data:image/png;base64,{0}",Model.BackgroundImage)))">
-    <h1>@Model.CategoryName</h1>
-    <h3>@Model.Description</h3>
-    <table>
-        @foreach (var item in Model.Foods)
-        {
-            <tr style="color:@Model.TextColor;">
-                <td><img style="min-width: 100px; max-width: 300px; height: auto;" src="@(string.Format("data:image/png;base64,{0}", item.Image))" /></td>
-                <td>@item.Name</td>
-                <td>@item.Description</td>
-                <td>@item.Price</td>
-            </tr>
-        }
-
-    </table>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+            <div class="page-section">
+                <h1 class="page-title">@Model.CategoryName</h1>
+                <h3 class="text-center">@Model.Description</h3>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-between">
+        <div class="menu-block">
+            <h3 class="menu-title">Starter</h3>
+            <div class="menu-content">
+                @foreach (var item in Model.Foods)
+                {
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <div class="dish-img"><img src="@(string.Format("data:image/png;base64,{0}", item.Image))" class="rounded-circle"></div>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                            <div class="dish-content" style="color:@Model.TextColor;">
+                                <h5 class="dish-title">@item.Name</h5>
+                                <h6 class="dish-meta">@item.Description</h6>
+                                <div class="dish-price">
+                                    <p>@item.Price</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
 </div>
-
-
 

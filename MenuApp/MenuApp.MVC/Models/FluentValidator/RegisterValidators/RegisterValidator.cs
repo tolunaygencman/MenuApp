@@ -27,12 +27,19 @@ namespace MenuApp.MVC.Models.FluentValidator.RegisterValidators
 
             RuleFor(x => x.Address).MaximumLength(512).WithMessage(x => stringLocalizer["Adress_Length"]).When(x => x.Address != null);
 
-
             RuleFor(x => x.Image.Length).LessThanOrEqualTo(5242880)
                .WithMessage(x => stringLocalizer["File_Size"]).When(x => x.Image != null);
 
             RuleFor(x => x.Image.ContentType).Must(x => x.Equals("image/jpeg") || x.Equals("image/jpg") || x.Equals("image/png"))
                 .WithMessage(x => stringLocalizer["Correct_Image_File_Type"]).When(x => x.Image != null);
+
+            RuleFor(x => x.Password).NotEmpty().WithMessage(x => stringLocalizer["Empty_Password"])
+                .MinimumLength(8).WithMessage(x => stringLocalizer["Password_Minumum_Length"])
+                .Equal(x => x.ConfirmPassword).WithMessage(x => stringLocalizer["Password_Control"]);
+
+            RuleFor(x => x.ConfirmPassword).NotEmpty().WithMessage(x => stringLocalizer["Empty_Password"])
+                .MinimumLength(8).WithMessage(x => stringLocalizer["Password_Minumum_Length"])
+                .Equal(x => x.Password).WithMessage(x => stringLocalizer["Password_Control"]);
         }
     }
 }

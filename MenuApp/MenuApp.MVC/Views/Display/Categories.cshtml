@@ -3,7 +3,7 @@
     ViewData["Title"] = Model.MenuName;
     Layout = "~/Views/Shared/_DisplayLayout.cshtml";
 }
-<style>
+@*<style>
     td{
         background-color:@Model.ButtonColor
     }
@@ -22,7 +22,43 @@
             </tr>
         }
     </table>
+</div>*@
+
+<div class="container-fluid" style="background:url(@(string.Format("data:image/png;base64,{0}",Model.BackgroundImage)))">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+            <div class="page-section">
+                <h1 class="page-title">@Model.MenuName</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-between">
+        <div class="menu-block">
+            <h3 class="menu-title">Starter</h3>
+            <div class="menu-content">
+                @foreach (var item in Model.Categories)
+                {
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <div class="dish-img"><img src="@(string.Format("data:image/png;base64,{0}", item.Image))" class="rounded-circle"></div>
+                        </div>
+                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                            <div class="dish-content" style="color:@Model.TextColor;">
+                                <h5 class="dish-title">@item.Name</h5>
+                                <h6 class="dish-meta">@item.Description</h6>
+                                <div class="dish-price">
+                                    <a class="btn btn-primary" asp-action="Foods" asp-route-id="@item.Id">@SharedLocalizer["Show_Foods"]</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
 </div>
+
+
 
 
 
